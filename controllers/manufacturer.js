@@ -171,7 +171,7 @@ export const uploadCertificates= async (req,res)=>{
 
                 await image.mv(PATH + uniqueFileName + ".jpg")
 
-                multipleCertificates.push(await PATH + uniqueFileName + ".jpg")
+                multipleCertificates.push(await "/images/certificates/" + uniqueFileName + ".jpg")
                 console.log("htis is multipel",multipleCertificates);
                 
                 };
@@ -193,7 +193,7 @@ export const uploadCertificates= async (req,res)=>{
       console.log("err",err);
     } else {
 
-        await    multipleCertificates.push(PATH+uniqueFileName+'.jpg')
+        await    multipleCertificates.push("/images/certificates/"+uniqueFileName+'.jpg')
         console.log("pushed",multipleCertificates);
 
         console.log("final array",multipleCertificates);
@@ -232,8 +232,8 @@ export const uploadMultiplePhotos= async(req,res)=>{
 
                 await image.mv(PATH + uniqueFileName + ".jpg")
 
-                multiplePhotosArray.push(await PATH + uniqueFileName + ".jpg")
-                console.log("htis is multipel",multiplePhotosArray);
+                multiplePhotosArray.push(await "/images/multiphotos/" + uniqueFileName + ".jpg")
+                
                 
                 };
                 
@@ -254,7 +254,7 @@ export const uploadMultiplePhotos= async(req,res)=>{
       console.log("err",err);
     } else {
 
-        await    multiplePhotosArray.push(PATH+uniqueFileName+'.jpg')
+        await    multiplePhotosArray.push("/images/multiphotos/"+uniqueFileName+'.jpg')
         console.log("pushed",multiplePhotosArray);
 
         console.log("final array",multiplePhotosArray);

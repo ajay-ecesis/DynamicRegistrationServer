@@ -6,6 +6,7 @@ const morgan = require('morgan');
 import cookieParser from 'cookie-parser'
 require("dotenv").config();
 var fileupload=require('express-fileupload')
+const path = require('path')
 //...
 
 // create express app
@@ -24,6 +25,10 @@ mongoose.connect(process.env.MONGO_DB, {
 
 // apply middlewares
 app.use(cors());
+
+//serve static files
+app.use(express.static('images'))
+app.use('/images', express.static(path.join(__dirname,'/images')))
 
 app.use(express.json({limit: '50mb'}));
 app.use(morgan("dev"));
