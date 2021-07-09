@@ -1,5 +1,6 @@
 import Manufacturer from '../models/manufacturer'
 import User from '../models/user'
+const fs=require('fs')
 
 export const updateManufacturer = async(req,res) => {
 
@@ -268,6 +269,25 @@ export const uploadMultiplePhotos= async(req,res)=>{
     catch{
 
         res.status(400).send('something went wrong')
+    }
+
+}
+
+export const removeImage=async(req,res)=>{
+
+    console.log("api to delete");
+    try{
+        console.log("delete",req.body);
+
+// deletes a file
+        fs.unlink("."+req.body.item, function() {
+          console.log("done");
+            res.send ("success");     
+          });
+    }
+    catch
+    {
+
     }
 
 }

@@ -1,11 +1,11 @@
 import express from 'express'
 const router = express.Router();
 
-import { updateManufacturer, getAllManufacturers,getManufacturerById,uploadMultiplePhotos, uploadCertificates,getManufacturerByUserId } from '../controllers/manufacturer';
+import { updateManufacturer, getAllManufacturers,getManufacturerById,uploadMultiplePhotos,removeImage, uploadCertificates,getManufacturerByUserId } from '../controllers/manufacturer';
 
 import {verifyTokenmiddleware, isAuth, isAdmin} from '../middlewares'
 
-
+router.post('/manufacturer/removeImage',removeImage)
 router.post('/manufacturer/uploadCertificates',uploadCertificates)
 router.post('/manufacturer/uploadMultiplePhotos',uploadMultiplePhotos)
 router.get('/getManufacturers', verifyTokenmiddleware, isAuth, isAdmin, getAllManufacturers)

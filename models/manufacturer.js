@@ -80,10 +80,8 @@ const manufacturerSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        certifications: { // base64 Image
-            type: String,
-            trim: true,
-            required: true
+        certifications: { 
+            type: Array
         },
         multiphotos:{
             type:Array
