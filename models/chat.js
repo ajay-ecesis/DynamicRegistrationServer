@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const {ObjectId} = mongoose.Schema;
 
-const messageSchema = new mongoose.Schema( // For categories
+const chatSchema = new mongoose.Schema( // For categories
     {   
         type:{
 type:String,
@@ -28,4 +28,4 @@ required:true
     {timestamps:true}
 )
 
-export default mongoose.model('message', messageSchema)
+export default mongoose.model('chat', chatSchema)

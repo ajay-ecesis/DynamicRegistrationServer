@@ -1,7 +1,7 @@
 
 import express from 'express'
 import { listUserByRole,getMyMessages} from '../controllers/messages';
-import { saveMessage } from '../controllers/savedMessage';
+import { saveMessage } from '../controllers/sa';
 const router = express.Router();
 
 
