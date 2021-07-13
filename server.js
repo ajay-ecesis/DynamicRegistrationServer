@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import {readdirSync} from 'fs';
 const morgan = require('morgan');
 import cookieParser from 'cookie-parser'
-import { insertImageMessage, insertTextMessage } from './controllers/messages';
+import { insertImageMessage, insertTextMessage } from './controllers/chat';
 require("dotenv").config();
 var fileupload=require('express-fileupload')
 const path = require('path')

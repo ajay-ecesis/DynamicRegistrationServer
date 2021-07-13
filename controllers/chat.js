@@ -1,4 +1,4 @@
-import Message from '../models/message'
+import chat from '../models/chat'
 import User from '../models/user'
 import { ObjectID } from 'bson'
 
@@ -57,7 +57,7 @@ export const insertTextMessage=async(message)=>{
 
     try{
 
-        const newMessage = new Message({
+        const newMessage = new chat({
             type:"text",
             message:message.Message,
             sender: message.senderId,
@@ -80,7 +80,7 @@ export const insertImageMessage=async (message)=>{
 
     try{
 
-       const newMessage=new Message({
+       const newMessage=new chat({
         type:'image',
         message:message.message,
         sender:message.sender,
